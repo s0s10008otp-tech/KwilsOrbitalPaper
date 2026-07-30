@@ -9,11 +9,6 @@ on:
   push:
   pull_request:
   workflow_dispatch:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - labeled
 
 jobs:
   build:
@@ -131,4 +126,4 @@ jobs:
         with:
           # TODO fallback for failing javadoc
           publishing-task: ":paper-api:publishAllPublicationsTo_githubPackages_PRsRepository publishDevBundlePublicationTo_githubPackages_PRsRepository -PpublishDevBundle"
-           path: paper-server/build/libs/*.jar
+         
