@@ -27,6 +27,7 @@ jobs:
         (github.event_name == 'push')
         || (github.event_name == 'pull_request' && github.repository != github.event.pull_request.head.repo.full_name && contains(fromJSON('["opened", "reopened", "synchronize"]'), github.event.action))
         || (github.event_name == 'pull_request' && github.event.action == 'labeled' && github.event.label.name == 'publish-pr')
+        || (github.event_name == 'workflow_dispatch')
       )
 
     runs-on: ubuntu-latest
